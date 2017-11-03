@@ -1,0 +1,10 @@
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\bin\Release\TraceSoapExtension.dll
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\bin\Release\TraceSoapExtension.pdb
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\bin\Release\TraceSoapExtension.xml
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\bin\Release\Newtonsoft.Json.dll
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\bin\Release\Newtonsoft.Json.xml
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\obj\Release\TraceSoapExtension.Resources.resources
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\obj\Release\TraceSoapExtension.vbproj.GenerateResource.Cache
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\obj\Release\TraceSoapExtension.dll
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\obj\Release\TraceSoapExtension.xml
+C:\Users\sanjeev_2\OneDrive\Projects\SDC\SDCWeb_Connectathon_2017\TraceSoapExtension\obj\Release\TraceSoapExtension.pdb

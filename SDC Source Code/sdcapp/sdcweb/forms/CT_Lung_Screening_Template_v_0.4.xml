@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sdctemplate.xslt" ?>
+
+<FormDesign xmlns="http://healthIT.gov/sdc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://healthIT.gov/sdc file:/M:/SDC/IHE/SDC%20Schemas%20Phase%20II%20Jan%205,%202016/SDCFormDesign.xsd" formID="LDCT_PNS">
+    <Header title="Low Dose CT; Primary Nodule Surveillance" ID="H01" styleClass="left">
+        <OtherText name="title" type="title" val="CT Lung Screening Template" styleClass="title"/>
+    </Header>
+    <Body title="CT Lung Screening Template" ID="B01" styleClass="title">
+        <OtherText type="Publisher" val="Cancer Care Ontario"/>
+        <OtherText type="Version" val="version 0.4"/>
+        <OtherText type="ReleaseDate" val="February 25, 2016"/>
+        <Contact>
+            <Organization>
+                <OrgName val="Cancer Care Ontario"/>
+                <Email>
+                    <EmailAddress val="jon.zammit@cancercare.on.ca"/>
+                </Email>
+            </Organization>
+        </Contact>
+        <ChildItems>
+            <Section title="CLINICAL INFORMATION" type="level1" ID="S1">
+                <ChildItems>
+                    <Question title="Smoking Status:" ID="Q1.3">
+                        <OtherText type="numbering" val="3."/>
+                        <ListField>
+                            <List>
+                                <ListItem title="Current Smoker:" ID="L1.1a">
+                                    <ChildItems>
+                                        <Question title="Pack years of smoking:" ID="Q1.1a">
+                                            <ResponseField>
+                                                <Response><positiveInteger xsi:nil="true"/></Response>
+                                                <TextAfterResponse val="pack years"/>
+                                            </ResponseField>
+                                        </Question>
+                                    </ChildItems>
+                                </ListItem>
+                                <ListItem title="Former Smoker:" ID="L1.1b">
+                                    <ChildItems>
+                                        <Question title="Quit time:" ID="Q1.1b.i">
+                                            <OtherText type="numbering" val="i)"/>
+                                            <ResponseField>
+                                                <Response><date xsi:nil="true"/></Response>
+                                            </ResponseField>
+                                        </Question>
+                                        <Question title="Pack years of smoking:" ID="Q1.1b.ii">
+                                            <OtherText type="numbering" val="ii)"/>
+                                            <ResponseField>
+                                                <Response><positiveInteger xsi:nil="true"/></Response>
+                                                <TextAfterResponse val="pack years"/>
+                                            </ResponseField>
+                                        </Question>
+                                    </ChildItems>
+                                </ListItem>
+                                <ListItem title="Never Smoked" ID="L1.1c"/>
+                            </List>
+                        </ListField>
+                    </Question>
+                    <Question title="Previous Cancer?" ID="Q1.4">
+                        <OtherText type="numbering" val="4."/>
+                        <ResponseField>
+                            <Response><string val=""/></Response>
+                        </ResponseField>
+                    </Question>
+                </ChildItems>
+            </Section>
+            <Section title="IMAGING PROCEDURE DESCRIPTION" type="level1" ID="S2">
+                <ChildItems>
+                    <Question title="Overall Image Quality:" ID="Q2.1">
+                        <OtherText type="numbering" val="1."/>
+                        <ListField numCols="3">
+                            <List>
+                                <ListItem title="Adequate" ID="L2.1a"/>
+                                <ListItem title="Suboptimal" ID="L2.1b"/>
+                                <ListItem title="Non-diagnostic" ID="L2.1c"/>
+                            </List>
+                        </ListField>
+                    </Question>
+                    <Question title="Procedure protocol:" ID="Q2.2">
+                        <OtherText type="numbering" val="2."/>
+                        <ListField>
+                            <List>
+                                <ListItem title="LDCT Study Protocol" ID="L2.2a"/>
+                                <ListItem title="Other" ID="L2.2b" selected="true">
+                                    <ListItemResponseField>
+                                        <Response>
+                                            <string val="Low-dose helical CT was acquired without intravenous contrast from the lung apices to the bases, and reconstructed at 3 mm every 2 mm in the axial plane and 5mm every 3mm in the coronal plane."/>
+                                        </Response>
+                                    </ListItemResponseField>
+                                </ListItem>
+                            </List>
+                        </ListField>
+                    </Question>
+                </ChildItems>
+            </Section>
+            <Section title="COMPARISON STUDIES" type="level1" ID="S3">
+                <ChildItems>
+                    <Question title="Comparison Study:" ID="Q3.1">
+                        <OtherText type="numbering" val="1."/>
+                        <ListField>
+                            <List>
+                                <ListItem title="None Available" ID="L3.1a"/>
+                                <ListItem title="Previous CT Exam:" ID="L3.1b">
+                                    <ChildItems>
+                                        <Question title="" ID="Q3.1b.dates" minCard="0" maxCard="0" >
+                                            <ResponseField>
+                                                <Response><date xsi:nil="true"/></Response>
+                                                <TextAfterResponse val="(dates)"></TextAfterResponse>
+                                            </ResponseField>
+                                        </Question>
+                                    </ChildItems>
+                                </ListItem>
+                            </List>
+                        </ListField>
+                    </Question>
+                </ChildItems>
+            </Section>
+            <Section title="FINDINGS" type="level1" ID="S4">
+                <ChildItems>
+                    <Section title="Nodules" ID="S4.A">
+                        <OtherText type="numbering" val="A."/>
+                        <ChildItems>
+                            <Question title="Number of lung nodules present in total:" ID="Q4.A.1">
+                                <OtherText type="numbering" val="1."/>
+                                <ListField>
+                                    <List>
+                                        <ListItem title="&lt;= 10" ID="L4.A.1a">
+                                            <ChildItems>
+                                                <Question title="specify (0-10):" ID="Q4.A.1a.lte">
+                                                    <ResponseField>
+                                                        <Response><nonNegativeInteger minInclusive="0" maxInclusive="10"/></Response>
+                                                    </ResponseField>
+                                                </Question>
+                                            </ChildItems>
+                                        </ListItem>
+                                        <ListItem title="&gt; 10" ID="L4.A.1b"/>
+                                    </List>
+                                </ListField>
+                            </Question>
+                            <Section title="Please describe the nodules below:" ID="S4.A.Nodules" minCard="0" maxCard="5" instanceGUID="" parentGUID="">
+                                <OtherText type="instruction" val="You will only need to measure the 5 most prominent lesions."/>
+                                <ChildItems>
+                                    <Question title="Nodule:" ID="Q4.A.Nodules.1">
+                                        <ResponseField>
+                                            <Response><string val=""/></Response>
+                                        </ResponseField>
+                                    </Question>
+                                    <Section ID="S4.A.Nodules.i">
+                                        <OtherText type="numbering" val="i."/>
+                                        <ChildItems>
+                                            <Question title="Series:" ID="Q4.A.Nodules.i.series">
+                                                <ResponseField>
+                                                    <Response><string val=""/></Response>
+                                                </ResponseField>
+                                            </Question>
+                                            <Question title="Image:" ID="Q4.A.Nodules.i.image">
+                                                <ResponseField>
+                                                    <Response><string val=""/></Response>
+                                                </ResponseField>
+                                            </Question>
+                                        </ChildItems>
+                                    </Section>
+                                    <Question title="Lobe:" ID="Q4.A.Nodules.v">
+                                        <OtherText type="numbering" val="v."/>
+                                        <ListField numCols="6">
+                                            <List>
+                                                <ListItem title="RUL" ID="L4.A.Nodules.v.a"/>
+                                                <ListItem title="RML" ID="L4.A.Nodules.v.b"/>
+                                                <ListItem title="RLL" ID="L4.A.Nodules.v.c"/>
+                                                <ListItem title="LUL" ID="L4.A.Nodules.v.d"/>
+                                                <ListItem title="Lingula" ID="L4.A.Nodules.v.e"/>
+                                                <ListItem title="LLL" ID="L4.A.Nodules.v.f"/>
+                                            </List>
+                                        </ListField>
+                                    </Question>
+                                    <Question title="Location:" ID="Q4.A.Nodules.vi">
+                                        <OtherText type="numbering" val="vi."/>
+                                        <ListField numCols="3">
+                                            <List>
+                                                <ListItem title="Parenchymal" ID="L4.A.Nodules.vi.a"/>
+                                                <ListItem title="Subpleural" ID="L4.A.Nodules.vi.b"/>
+                                                <ListItem title="Fissural" ID="L4.A.Nodules.vi.c"/>
+                                            </List>
+                                        </ListField>
+                                    </Question>
+                                    <Question title="Attenuation:" ID="Q4.A.Nodules.vii">
+                                        <OtherText type="numbering" val="vii."/>
+                                        <ListField numCols="3">
+                                            <List>
+                                                <ListItem title="Solid" ID="L4.A.Nodules.vii.a"/>
+                                                <ListItem title="Part-solid" ID="L4.A.Nodules.vii.b"/>
+                                                <ListItem title="Pure Ground Glass" ID="L4.A.Nodules.vii.c"/>
+                                            </List>
+                                        </ListField>
+                                    </Question>
+                                    <Section title="Size:" ID="S4.A.Nodules.iv">
+                                        <OtherText type="numbering" val="iv."/>
+                                        <ChildItems>
+                                            <Question title="Size of solid component:" ID="Q4.A.Nodules.iv.solid">
+                                                <OtherText type="numbering" val="a)"/>
+                                                <ResponseField>
+                                                    <Response><integer xsi:nil="true"/></Response>
+                                                    <ResponseUnits val="mm"/>
+                                                </ResponseField>
+                                            </Question>
+                                            <Question title="Longest measurement:" ID="Q4.A.Nodules.iv.long">
+                                                <OtherText type="numbering" val="b)"/>
+                                                <ResponseField>
+                                                    <Response><integer xsi:nil="true"/></Response>
+                                                    <ResponseUnits val="mm"/>
+                                                </ResponseField>
+                                            </Question>
+                                            <Question title="Widest perpendicular:" ID="Q4.A.Nodules.iv.wide">
+                                                <OtherText type="numbering" val="c)"/>
+                                                <ResponseField>
+                                                    <Response><integer xsi:nil="true"/></Response>
+                                                    <ResponseUnits val="mm"/>
+                                                </ResponseField>
+                                            </Question>
+                                        </ChildItems>
+                                    </Section>
+                                    <Question title="Status" ID="Q4.A.Nodules.ii">
+                                        <OtherText type="numbering" val="ii."/>
+                                        <ListField>
+                                            <List>
+                                                <ListItem title="New" ID="L4.A.Nodules.ii.a"/>
+                                                <ListItem title="Old - reported before" ID="L4.A.Nodules.ii.b"/>
+                                                <ListItem title="Old - previously not described" ID="L4.A.Nodules.ii.c"/>
+                                                <ListItem title="First seen:" ID="L4.A.Nodules.ii.a">
+                                                    <ListItemResponseField>
+                                                        <Response><date xsi:nil="true"/></Response>
+                                                        <TextAfterResponse val=" (date)"/>
+                                                    </ListItemResponseField>
+                                                </ListItem>
+                                            </List>
+                                        </ListField>
+                                    </Question>
+                                    <Question title="Comparison:" ID="Q4.A.Nodules.iii">
+                                        <OtherText type="numbering" val="iii."/>
+                                        <ListField>
+                                            <List>
+                                                <ListItem title="N/A (new)" ID="L4.A.Nodules.iii.a"/>
+                                                <ListItem title="No longer Present" ID="L4.A.Nodules.iii.a"/>
+                                                <ListItem title="Decreased" ID="L4.A.Nodules.iii.a"/>
+                                                <ListItem title="Unchanged" ID="L4.A.Nodules.iii.a"/>
+                                                <ListItem title="Growth" ID="L4.A.Nodules.iii.a">
+                                                    <ChildItems>
+                                                        <Question ID="Q4.A.Nodules.iii.e">
+                                                            <ListField multiSelect="true">
+                                                                <List>
+                                                                    <ListItem title="Growth in size" ID="L4.A.Nodules.iii.e.s"/>
+                                                                    <ListItem title="Growth in desnsity" ID="L4.A.Nodules.iii.e.d"/>
+                                                                </List>
+                                                            </ListField>
+                                                        </Question>
+                                                    </ChildItems>
+                                                </ListItem>                                               
+                                            </List>
+                                        </ListField>
+                                        <ChildItems>
+                                            <Question title="Compared to:" ID="Q4.A.Nodules.iii.a">
+                                                <OtherText type="numbering" val="a"/>
+                                                <ResponseField>
+                                                    <Response><date xsi:nil="true"/></Response>
+                                                </ResponseField>
+                                            </Question>
+                                        </ChildItems>
+                                    </Question>
+                                    <Question title="Margins:" ID="Q4.A.Nodules.viii">
+                                        <OtherText type="numbering" val="viii"/>
+                                        <ListField numCols="6">
+                                            <List>
+                                                <ListItem title="Smooth" ID="L4.A.Nodules.viii.a"/>
+                                                <ListItem title="Spiculated" ID="L4.A.Nodules.viii.b"/>
+                                                <ListItem title="Lobulated" ID="L4.A.Nodules.viii.c"/>
+                                                <ListItem title="Halo" ID="L4.A.Nodules.viii.d"/>
+                                                <ListItem title="Obscured" ID="L4.A.Nodules.viii.e"/>
+                                                <ListItem title="Other:" ID="L4.A.Nodules.viii.f">
+                                                    <ListItemResponseField>
+                                                        <Response><string val=""/></Response>
+                                                    </ListItemResponseField>
+                                                </ListItem>
+                                            </List>
+                                        </ListField>
+                                    </Question>
+                                    <Question title="Calcification:" ID="Q4.A.Nodules.ix">
+                                        <OtherText type="numbering" val="ix."/>
+                                        <ListField numCols="5">
+                                            <List>
+                                                <ListItem title="None" ID="L4.A.Nodules.ix.a"/>
+                                                <ListItem title="Complete" ID="L4.A.Nodules.ix.b"/>
+                                                <ListItem title="Central" ID="L4.A.Nodules.ix.c"/>
+                                                <ListItem title="Popcorn" ID="L4.A.Nodules.ix.c"/>
+                                                <ListItem title="Concentric Rings" ID="L4.A.Nodules.ix.c"/>
+                                            </List>
+                                        </ListField>
+                                    </Question>
+                                    <Question title="Other characteristics:" ID="Q4.A.Nodules.x">
+                                        <OtherText type="numbering" val="x."/>
+                                        <ListField numCols="4">
+                                            <List>
+                                                <ListItem title="None" ID="L4.A.Nodules.x.a"/>
+                                                <ListItem title="Fat" ID="L4.A.Nodules.x.b"/>
+                                                <ListItem title="Cavitation" ID="L4.A.Nodules.x.c"/>
+                                                <ListItem title="Other" ID="L4.A.Nodules.x.d">
+                                                    <ListItemResponseField>
+                                                        <Response><string val=""/></Response>
+                                                    </ListItemResponseField>
+                                                </ListItem>
+                                            </List>
+                                        </ListField>
+                                    </Question>
+                                    <Question title="Other comments:" ID="Q4.A.Nodules.xi">
+                                        <OtherText type="numbering" val="xi."/>
+                                        <ResponseField>
+                                            <Response><string val=""/></Response>
+                                        </ResponseField>
+                                    </Question>
+                                    <DisplayedItem title="Repeat for other nodules by filling out Nodules B – E as necessary." ID="D4.A.Nodules" showInReport="false"/>
+                                </ChildItems>
+                            </Section>
+                        </ChildItems>
+                    </Section>
+                    <Section title="Other Lung findings" ID="S4.B">
+                        <OtherText type="numbering" val="B."/>
+                        <ChildItems>
+                            <Question title="Check the relevant lung findings and describe as needed:" ID="Q4.B.1" showInReport="false">
+                                <ListField multiSelect="true">
+                                    <List>
+                                        <ListItem title="Interstitial lung disease / Fibrosis:" ID="L4.B.1.a">
+                                            <OtherText type="numbering" val="i."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Lung infiltrate or consolidation consistent with infection:" ID="L4.B.1.b">
+                                            <OtherText type="numbering" val="ii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Bronchiectasis:" ID="L4.B.1.c">
+                                            <OtherText type="numbering" val="iii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Mucous plugging:" ID="L4.B.1.d">
+                                            <OtherText type="numbering" val="iv."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Atelectasis:" ID="L4.B.1.e">
+                                            <OtherText type="numbering" val="v."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Emphysema:" ID="L4.B.1.f">
+                                            <OtherText type="numbering" val="vi."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Airway abnormality:" ID="L4.B.1.g">
+                                            <OtherText type="numbering" val="vii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Granulomatous disease:" ID="L4.B.1.h">
+                                            <OtherText type="numbering" val="viii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Other:" ID="L4.B.1.i">
+                                            <OtherText type="numbering" val="ix."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                    </List>
+                                </ListField>
+                            </Question>
+                        </ChildItems>
+                    </Section>
+                    <Section title="Lymph Nodes:" ID="S4.C">
+                        <OtherText type="numbering" val="C"/>
+                        <ChildItems>
+                            <Question title="Lymph nodes:" ID="Q4.C.1">
+                                <OtherText type="numbering" val="1)"/>
+                                <ListField numCols="3">
+                                    <List>
+                                        <ListItem title="Normal" ID="L4.C.1.a"/>
+                                        <ListItem title="Benign, calcified" ID="L4.C.1.b"/>
+                                        <ListItem title="Enlarged" ID="L4.C.1.c">
+                                            <ChildItems>
+                                                <Question ID="Q4.C.1.c">
+                                                    <ResponseField>
+                                                        <Response><string val=""/></Response>
+                                                        <TextAfterResponse val="(describe the enlarged nodes)"/>
+                                                    </ResponseField>
+                                                </Question>
+                                                <!--<Question title="If enlarged, please indicate which lymph nodes are enlarged, and state if they are calcified or not. If not enlarged, go to D." ID="Q4.C.1.b" showInReport="false">
+                                                    <ListField multiSelect="true" numCols="2">
+                                                        <List>
+                                                            <ListItem title="1 Low Cervical, supraclavicular, and sternal notch nodes" ID="L4.C.1.b.a">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.a">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="2R Upper Paratracheal (right)" ID="L4.C.1.b.b">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.b">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="2L Upper paratracheal (left)" ID="L4.C.1.b.c">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.c">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="3a Pre-vascular" ID="L4.C.1.b.d">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.d">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="3p Retrotracheal" ID="L4.C.1.b.e">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.e">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="4R Lower paratracheal (right)" ID="L4.C.1.b.f">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.f">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="4L Upper paratracheal (left)" ID="L4.C.1.b.g">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.g">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="5 Subaortic" ID="L4.C.1.b.h">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.h">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="6 Para-aortic (ascending aorta or phrenic)" ID="L4.C.1.b.i">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.i">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="7 Subcarinal" ID="L4.C.1.b.j">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.j">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="8 Paraesophageal (below carina)" ID="L4.C.1.b.k">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.k">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="9 Pulmonary ligament" ID="L4.C.1.b.l">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.l">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="10 Hilar" ID="L4.C.1.b.m">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.m">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="11 Interlobar" ID="L4.C.1.b.n">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.n">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="12 Lobar" ID="L4.C.1.b.o">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.o">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="13 Segmental" ID="L4.C.1.b.p">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.p">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="14 Subsegmental" ID="L4.C.1.b.q">
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.q">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="Other Nodes (axilla, sub-diaphragmatic):" ID="L4.C.1.b.r">
+                                                                <ListItemResponseField>
+                                                                    <Response><string val=""/></Response>
+                                                                </ListItemResponseField>
+                                                                <ChildItems>
+                                                                    <Question title="Calcifed:" ID="Q4.C.1.b.r">
+                                                                        <ResponseField>
+                                                                            <Response><boolean xsi:nil="true"/></Response>
+                                                                        </ResponseField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                        </List>
+                                                    </ListField>
+                                                </Question>-->
+                                            </ChildItems>
+                                        </ListItem>
+                                    </List>
+                                </ListField>
+                            </Question> 
+                        </ChildItems>
+                    </Section>
+                    <Section title="Pleural Space" ID="S4.D">
+                        <OtherText type="numbering" val="D"/>
+                        <ChildItems>
+                            <Question title="Pleura Space: " ID="Q4.D.1">
+                                <OtherText type="numbering" val="1."/>
+                                <ListField>
+                                    <List>
+                                        <ListItem title="Normal" ID="L4.D.1.a"/>
+                                        <ListItem title="Abnormal*" ID="L4.D.1.b">
+                                            <ChildItems>
+                                                <Question title="*If abnormal, answer the questions below:" ID="Q4.D.1.b">
+                                                    <ListField multiSelect="true">
+                                                        <List>
+                                                            <ListItem title="Effusion:" ID="L4.D.1.b.a">
+                                                                <OtherText type="numbering" val="i."/>
+                                                                <ChildItems>
+                                                                    <Question ID="Q4.D.1.b.a">
+                                                                        <ListField numCols="2">
+                                                                            <List>
+                                                                                <ListItem title="Right:" ID="L4.D.1.b.a.a">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                                <ListItem title="Left:" ID="L4.D.1.b.a.b">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                            </List>
+                                                                        </ListField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="Thickening:" ID="L4.D.1.b.b">
+                                                                <OtherText type="numbering" val="ii."/>
+                                                                <ChildItems>
+                                                                    <Question ID="Q4.D.1.b.b">
+                                                                        <ListField numCols="2">
+                                                                            <List>
+                                                                                <ListItem title="Right:" ID="L4.D.1.b.b.a">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                                <ListItem title="Left:" ID="L4.D.1.b.b.b">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                            </List>
+                                                                        </ListField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="Pneumothorax:" ID="L4.D.1.b.c">
+                                                                <OtherText type="numbering" val="iii."/>
+                                                                <ChildItems>
+                                                                    <Question ID="Q4.D.1.b.c">
+                                                                        <ListField numCols="2">
+                                                                            <List>
+                                                                                <ListItem title="Right:" ID="L4.D.1.b.c.a">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                                <ListItem title="Left:" ID="L4.D.1.b.c.b">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                            </List>
+                                                                        </ListField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="Pleural Plaques:" ID="L4.D.1.b.d">
+                                                                <OtherText type="numbering" val="iv."/>
+                                                                <ChildItems>
+                                                                    <Question ID="Q4.D.1.b.d">
+                                                                        <ListField numCols="2">
+                                                                            <List>
+                                                                                <ListItem title="Right:" ID="L4.D.1.b.d.a">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                                <ListItem title="Left:" ID="L4.D.1.b.d.b">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                            </List>
+                                                                        </ListField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                            <ListItem title="Other:" ID="L4.D.1.b.e">
+                                                                <OtherText type="numbering" val="v."/>
+                                                                <ChildItems>
+                                                                    <Question ID="Q4.D.1.b.e">
+                                                                        <ListField numCols="2">
+                                                                            <List>
+                                                                                <ListItem title="Right:" ID="L4.D.1.b.e.a">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                                <ListItem title="Left:" ID="L4.D.1.b.e.b">
+                                                                                    <ListItemResponseField>
+                                                                                        <Response><string val=""/></Response>
+                                                                                    </ListItemResponseField>
+                                                                                </ListItem>
+                                                                            </List>
+                                                                        </ListField>
+                                                                    </Question>
+                                                                </ChildItems>
+                                                            </ListItem>
+                                                        </List>
+                                                    </ListField>
+                                                </Question>
+                                            </ChildItems>
+                                        </ListItem>
+                                    </List>
+                                </ListField>
+                            </Question>
+                        </ChildItems>
+                    </Section>
+                    <Section title="Heart &amp; Mediastinal vessels" ID="S4.E">
+                        <OtherText type="numbering" val="E"/>
+                        <ChildItems>
+                            <Question title="Indicate the relevant findings and describe as needed:" ID="Q4.E.1">
+                                <ListField multiSelect="true">
+                                    <List>
+                                        <ListItem title="Heart:" ID="L4.E.1.a">
+                                            <OtherText type="numbering" val="i."/>
+                                            <ChildItems>
+                                                <Question ID="Q4.E.1.a">
+                                                    <ListField numCols="3">
+                                                        <List>
+                                                            <ListItem title="Normal" ID="L4.E.1.a.a"/>
+                                                            <ListItem title="Enlarged" ID="L4.E.1.a.b"/>
+                                                            <ListItem title="Other" ID="L4.E.1.a.c">
+                                                                <ListItemResponseField>
+                                                                    <Response><string val=""/></Response>
+                                                                </ListItemResponseField>
+                                                            </ListItem>
+                                                        </List>
+                                                    </ListField>
+                                                </Question>
+                                            </ChildItems>
+                                        </ListItem>
+                                        <ListItem title="Coronary calcification:" ID="L4.E.1.b">
+                                            <OtherText type="numbering" val="ii."/>
+                                            <ChildItems>
+                                                <Question ID="Q4.E.1.b">
+                                                    <ListField numCols="2">
+                                                        <List>
+                                                            <ListItem title="Absent" ID="L4.E.1.b.a"/>
+                                                            <ListItem title="Present" ID="L4.E.1.b.b"/>
+                                                        </List>
+                                                    </ListField>
+                                                </Question>
+                                            </ChildItems>
+                                        </ListItem>
+                                        <ListItem title="Pericardium:" ID="L4.E.1.c">
+                                            <OtherText type="numbering" val="iii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Aorta:" ID="L4.E.1.d">
+                                            <OtherText type="numbering" val="iv."/>
+                                            <ChildItems>
+                                                <Question ID="Q4.E.1.d">
+                                                    <ListField numCols="3">
+                                                        <List>
+                                                            <ListItem title="Normal" ID="L4.E.1.d.a"/>
+                                                            <ListItem title="Dilated" ID="L4.E.1.d.b"/>
+                                                            <ListItem title="Other:" ID="L4.E.1.d.c">
+                                                                <ListItemResponseField>
+                                                                    <Response><string val=""/></Response>
+                                                                </ListItemResponseField>
+                                                            </ListItem>
+                                                        </List>
+                                                    </ListField>
+                                                </Question>
+                                            </ChildItems>
+                                        </ListItem>
+                                        <ListItem title="Pulmonary arteries:" ID="L4.E.1.e">
+                                            <OtherText type="numbering" val="v."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Other:" ID="L4.E.1.f">
+                                            <OtherText type="numbering" val="vi."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                    </List>
+                                </ListField>
+                            </Question>
+                        </ChildItems>
+                    </Section>
+                    <Section title="Other findings:" ID="S4.F">
+                        <OtherText type="numbering" val="F"/>
+                        <ChildItems>
+                            <Question title="Check the relevant lung findings and describe as needed:" ID="Q4.F.1">
+                                <ListField multiSelect="true">
+                                    <List>
+                                        <ListItem title="Chest wall/skin" ID="L4.F.1.c">
+                                            <OtherText type="numbering" val="i."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Breast" ID="L4.F.1.d">
+                                            <OtherText type="numbering" val="ii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Base of neck" ID="L4.F.1.e">
+                                            <OtherText type="numbering" val="iii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Thyroid" ID="L4.F.1.f">
+                                            <OtherText type="numbering" val="iv."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Esophageal/upper GI" ID="L4.F.1.a">
+                                            <OtherText type="numbering" val="v"/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Upper abdomen" ID="L4.F.1.g">
+                                            <OtherText type="numbering" val="vi."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Bones" ID="L4.F.1.h">
+                                            <OtherText type="numbering" val="vii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                        <ListItem title="Other" ID="L4.F.1.i">
+                                            <OtherText type="numbering" val="viii."/>
+                                            <ListItemResponseField>
+                                                <Response><string val=""/></Response>
+                                            </ListItemResponseField>
+                                        </ListItem>
+                                    </List>
+                                </ListField>
+                            </Question>
+                        </ChildItems>
+                    </Section>
+                </ChildItems>
+            </Section>
+            <Section title="IMPRESSIONS" type="level1" ID="S5">
+                <ChildItems>
+                    <Question title="Lung‐RADS™ Version 1.0 Assessment Category" ID="Q5.1">
+                        <OtherText type="numbering" val="1)"/>
+                        <ListField>
+                            <List>
+                                <ListItem title="0" ID="L5.1a">
+                                    <OtherText type="Category" val="Incomplete"/>
+                                    <OtherText type="CategoryDescriptor" val="-"/>
+                                    <OtherText type="Management" val="Additional lung cancer screening CT images and/or comparison to prior chest CT examinations is needed"/>
+                                </ListItem>
+                                <ListItem title="1" ID="L5.1b">
+                                    <OtherText type="Category" val="Negative"/>
+                                    <OtherText type="CategoryDescriptor" val="No nodules and definitely benign nodules"/>
+                                    <OtherText type="Management" val="Continue annual screening with LDCT in 12 months"/>
+                                </ListItem>
+                                <ListItem title="2" ID="L5.1c">
+                                    <OtherText type="Category" val="Benign Appearance or Behavior"/>
+                                    <OtherText type="CategoryDescriptor" val="Nodules with a very low 90% likelihood of becoming a clinically active cancer due to size or lack of growth"/>
+                                    <OtherText type="Management" val="Continue annual screening with LDCT in 12 months"/>
+                                </ListItem>
+                                <ListItem title="3" ID="L5.1d">
+                                    <OtherText type="Category" val="Probably Benign"/>
+                                    <OtherText type="CategoryDescriptor" val="Probably benign finding(s) ‐ short term follow up suggested; includes nodules with alow likelihood of becoming a clinically active cancer"/>
+                                    <OtherText type="Management" val="6 month LDCT"/>
+                                </ListItem>
+                                <ListItem title="4A" ID="L5.1e">
+                                    <OtherText type="Category" val="Suspicious"/>
+                                    <OtherText type="CategoryDescriptor" val="Findings for which additional diagnostic testing and/or tissue sampling is recommended"/>
+                                    <OtherText type="Management" val="3 month LDCT; PET/CT may be used when there is a ≥ 8 mm solid component"/>
+                                </ListItem>
+                                <ListItem title="4B" ID="L5.1f">
+                                    <OtherText type="Category" val="Suspicious"/>
+                                    <OtherText type="CategoryDescriptor" val="Findings for which additional diagnostic testing and/or tissue sampling is recommended"/>
+                                    <OtherText type="Management" val="chest CT with or without contrast, PET/CT and/or tissue sampling depending on the *probability of malignancy and comorbidities. PET/CT may be used when there is a ≥ 8 mm solid component."/>
+                                </ListItem>
+                                <ListItem title="4X" ID="L5.1g">
+                                    <OtherText type="Category" val="Suspicious"/>
+                                    <OtherText type="CategoryDescriptor" val="chest CT with or without contrast, PET/CT and/or tissue sampling depending on the *probability of malignancy and comorbidities. PET/CT may be used when there is a ≥ 8 mm solid component."/>
+                                    <OtherText type="Management" val="Continue annual screening with LDCT in 12 months"/>
+                                </ListItem>
+                            </List>
+                        </ListField>
+                    </Question>
+                    <Question title="Modifiers:" ID="Q5.2">
+                        <OtherText type="numbering" val="2."/>
+                        <ListField>
+                            <List>
+                                <ListItem title="S:" ID="L5.2.a">
+                                    <ListItemResponseField>
+                                        <Response><string val=""/></Response>
+                                        <TextAfterResponse val="(provide guidance related to incidental finding)"></TextAfterResponse>
+                                    </ListItemResponseField>
+                                </ListItem>
+                                <ListItem title="C:" ID="L5.2.b"/>
+                            </List>
+                        </ListField>
+                    </Question>
+                    <Question title="Verbal Report Notification Required?" ID="Q5.3">
+                        <OtherText type="numbering" val="3."/>
+                        <ResponseField>
+                            <Response><boolean xsi:nil="true"/></Response>
+                        </ResponseField>
+                    </Question>
+                    <Question title="See Physician:" ID="Q5.4">
+                        <OtherText type="numbering" val="4."/>
+                        <ListField numCols="2">
+                            <List>
+                                <ListItem title="No" ID="L6.3a"/>
+                                <ListItem title="Yes, Incidental finding" ID="L6.3b">
+                                    <ListItemResponseField responseRequired="true">
+                                        <Response><string val=""/></Response>
+                                    </ListItemResponseField>
+                                </ListItem>
+                            </List>
+                        </ListField>
+                    </Question>
+                    <Question title="Other Comments" ID="Q5.5">
+                        <OtherText type="numbering" val="5."/>
+                        <ResponseField>
+                            <Response><string val=""/></Response>
+                        </ResponseField>
+                    </Question>
+                </ChildItems>
+            </Section>
+        </ChildItems>
+    </Body>
+</FormDesign>

@@ -1,0 +1,1677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="sdctemplate.xslt" ?>
+<FormDesign xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:ihe:qrph:sdc:2016 ../Users/rmoldwi/Documents/SDC/SDC%20Schemas%20Phase%20III/SDCFormDesign.xsd"
+ xmlns="urn:ihe:qrph:sdc:2016" xmlns:xsd="http://www.w3.org/2001/XMLSchema" styleClass="left"
+ ID="227.100004300" baseURI="www.cap.org/eCC/SDC/IHE" formTitle="Lung Biomarker Reporting Template">
+ <Property type="meta" styleClass="copyright" order="25419" propName="Copyright" val="(c) 2017 College of American Pathologists.  All rights reserved.  License required for use." />
+ <Property styleClass="float-right" order="25420" propName="CAP_Approval_Status" val="CAP approved" />
+ <Property type="meta" styleClass="left" order="25421" propName="GenericHeaderText" propClass="eCC_CAP_Protocol" val="Cancer Biomarker Reporting Template" />
+ <Property type="meta" order="25422" propName="OfficialName" propClass="eCC_CAP_Protocol" val="Lung Biomarker Reporting Template" />
+ <Property type="meta" order="25423" propName="Category" propClass="eCC_CAP_Protocol" val="Thorax" />
+ <Property type="meta" order="25424" propName="Restrictions" propClass="eCC_CAP_Protocol" val="For non-small cell carcinoma of the lung. Use of this template is optional." />
+ <Property type="meta" order="25425" propName="Required" propClass="eCC_CAP_Protocol" val="false" />
+ <Property type="meta" order="25426" propName="CTV_Ckey" propClass="eCC_" val="227.100004300" />
+ <Property type="meta" order="25427" propName="ChecklistCKey" propClass="eCC_" val="117.100004300" />
+ <Property type="meta" order="25428" propName="VersionID" propClass="eCC_" val="1.001.001.1000043" />
+ <Property type="meta" order="25429" propName="CurrentFileName" propClass="eCC_" val="LungBiomarkersNon-SmallCel_1.001.001" />
+ <Property type="meta" order="25430" propName="ApprovalStatus" propClass="eCC_" />
+ <Property type="meta dt.dateTime" styleClass="right" order="25431" propName="EffectiveDate" propClass="eCC_Dates" />
+ <Property type="meta dt.dateTime" styleClass="right" order="25432" propName="WebPostingDate" propClass="eCC_Dates" val="6/27/2016 12:00:00 AM" />
+ <Property type="meta" styleClass="right" order="25433" propName="AJCC_UICC_Version" propClass="eCC_Data_Sources" />
+ <Property type="meta" styleClass="right" order="25434" propName="CS_Version" propClass="eCC_Data_Sources" />
+ <Property type="meta" styleClass="right" order="25435" propName="FIGO_Version" propClass="eCC_Data_Sources" />
+ <Body ID="227.100004300_DefaultBodyGUID_a76a97e4-28e1-4831-a483-c394780be399">
+  <ChildItems>
+   <DisplayedItem order="25438" ID="29723.100004300" title="Completion of the template is the responsibility of the laboratory performing the biomarker testing and / or providing the interpretation. When both testing and interpretation are performed elsewhere (e.g., a reference laboratory), synoptic reporting of the results by the laboratory submitting the tissue for testing is also encouraged to ensure that all information is included in the patient’s medical record and thus readily available to the treating clinical team.">
+    <Property order="25439" propName="reportText" val="{no text}" />
+   </DisplayedItem>
+   <DisplayedItem order="25440" ID="29680.100004300" title="Note: Fixative type, time to fixation (cold ischemia time), and time of fixation should be reported if applicable in this template or in the original pathology report (Note F).">
+    <Property order="25441" propName="reportText" val="{no text}" />
+   </DisplayedItem>
+   <DisplayedItem order="25442" ID="35359.100004300" title="Gene names should follow recommendations of The Human Genome Organisation (HUGO) Nomenclature Committee (www.genenames.org; accessed February 10, 2015).">
+    <Property order="25443" propName="reportText" val="{no text}" />
+   </DisplayedItem>
+   <DisplayedItem order="25444" ID="35751.100004300" title="All reported gene sequence variations should be identified following the recommendations of the Human Genome Variation Society (www.hgvs.org/mutnomen/; accessed February 10, 2015).">
+    <Property order="25445" propName="reportText" val="{no text}" />
+   </DisplayedItem>
+   <DisplayedItem order="25446" ID="36099.100004300" title="Note: If a marker is tested by more than one method (e.g., polymerase chain reaction and immunohistochemistry), please document the additional result(s) and method(s) in the Comments section of the report.">
+    <Property order="25447" propName="reportText" val="{no text}" />
+   </DisplayedItem>
+   <Section order="25448" ID="29693.100004300" title="SPECIMEN (Note A)" mustImplement="false" minCard="0">
+    <Property order="25449" propName="reportText" val="SPECIMEN" />
+    <ChildItems>
+     <Question order="25451" ID="29689.100004300" title="Adequacy of Sample for Testing" mustImplement="false" minCard="0">
+      <ListField>
+       <List>
+        <ListItem order="25454" ID="29690.100004300" title="Adequate" mustImplement="false">
+         <ChildItems>
+          <Question order="25456" ID="29691.100004300" title="Estimated % Tumor Cellularity (area used for testing)" mustImplement="false" minCard="0">
+           <Property order="25457" propName="reportText" val="]Estimated Tumor Cellularity" />
+           <ResponseField order="25458">
+            <Response>
+             <string order="25461" maxLength="3" />
+            </Response>
+            <TextAfterResponse val="%" />
+            <ResponseUnits val="%" />
+           </ResponseField>
+          </Question>
+         </ChildItems>
+        </ListItem>
+        <ListItem order="25463" ID="29692.100004300" title="Suboptimal (explain)" mustImplement="false">
+         <Property order="25464" propName="reportText" val="Suboptimal" />
+         <ListItemResponseField order="25465" responseRequired="true">
+          <Response>
+           <string order="25467" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+         <ChildItems>
+          <DisplayedItem order="25469" ID="29711.100004300">
+           <Property order="25470" propName="reportText" val="]Please refer to original laboratory report for explanation." />
+          </DisplayedItem>
+         </ChildItems>
+        </ListItem>
+       </List>
+      </ListField>
+     </Question>
+     <Question order="25471" ID="34143.100004300" title="Specimen Type" mustImplement="false" minCard="0">
+      <ListField>
+       <List>
+        <ListItem order="25474" ID="34045.100004300" title="Untreated diagnostic specimen" mustImplement="false" />
+        <ListItem order="25475" ID="34125.100004300" title="Relapse specimen (after treatment; specify)#" mustImplement="false">
+         <Property order="25476" propName="reportText" val="]Relapse specimen (treatment)" />
+         <ListItemResponseField order="25477" responseRequired="true">
+          <Response>
+           <string order="25479" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+         <ChildItems>
+          <DisplayedItem order="25481" ID="34131.100004300" title="# When data is available, specify treatment type.  This is most relevant to targeted inhibitors associated with specific genomic changes conferring treatment resistance (especially erlotinib, gefitinib, and other EGFR tyrosine kinase inhibitors).">
+           <Property order="25482" propName="reportText" val="{no text}" />
+          </DisplayedItem>
+         </ChildItems>
+        </ListItem>
+       </List>
+      </ListField>
+     </Question>
+    </ChildItems>
+   </Section>
+   <Section order="25483" ID="29694.100004300" title="RESULTS" mustImplement="false" minCard="0">
+    <ChildItems>
+     <Section order="25485" ID="29696.100004300" title="EGFR (Note B)" mustImplement="false" minCard="0">
+      <Property order="25486" propName="reportText" val="EGFR" />
+      <ChildItems>
+       <Question order="25488" ID="29703.100004300" title="EGFR Mutational Analysis" mustImplement="false" minCard="0">
+        <Link>
+		   <LinkText val="MCG" >
+			   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+		   </LinkText>
+		   <LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/egfr/"/>
+	   </Link>
+		<ListField>
+         <List>
+          <ListItem order="25491" ID="29704.100004300" title="No mutation detected" mustImplement="false" />
+          <ListItem order="25492" ID="29705.100004300" title="Mutation(s) identified" mustImplement="false">
+           <Property order="25493" propName="reportText" val="{no text}" />
+           <ChildItems>
+            <Question order="25495" ID="29684.100004300" mustImplement="false" minCard="0">
+             <ListField maxSelections="0">
+              <List>
+               <ListItem order="25498" ID="29706.100004300" title="Exon 18 Gly719" mustImplement="false">
+                <Link>
+                       <LinkText val="COSM" >
+                           <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+                       </LinkText>
+                       <LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=85997"/>
+                   </Link>
+				<ChildItems>
+                 <DisplayedItem order="25500" ID="29732.100004300">
+                  <Property order="25501" propName="reportText" val="{no text}" />
+                 </DisplayedItem>
+                </ChildItems>
+               </ListItem>
+               <ListItem order="25502" ID="29716.100004300" title="Exon 19 deletion" mustImplement="false">
+                <ChildItems>
+                 <DisplayedItem order="25504" ID="29733.100004300">
+                  <Property order="25505" propName="reportText" val="{no text}" />
+                 </DisplayedItem>
+                </ChildItems>
+               </ListItem>
+               <ListItem order="25506" ID="29725.100004300" title="Exon 20 insertion" mustImplement="false">
+                <ChildItems>
+                 <DisplayedItem order="25508" ID="29708.100004300">
+                  <Property order="25509" propName="reportText" val="{no text}" />
+                 </DisplayedItem>
+                </ChildItems>
+               </ListItem>
+               <ListItem order="25510" ID="29730.100004300" title="Exon 20 Thr790Met" mustImplement="false">
+                <Link>
+					   <LinkText val="MCG" >
+						   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					   </LinkText>
+					   <LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/egfr/4/"/>
+				   </Link>
+				<ChildItems>
+                 <DisplayedItem order="25512" ID="29709.100004300">
+                  <Property order="25513" propName="reportText" val="{no text}" />
+                 </DisplayedItem>
+                </ChildItems>
+               </ListItem>
+               <ListItem order="25514" ID="29685.100004300" title="Exon 21 Leu858Arg" mustImplement="false">
+                <Link>
+				   <LinkText val="MCG" >
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+				   </LinkText>
+				   <LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/egfr/5/"/>
+				</Link>
+				<ChildItems>
+                 <DisplayedItem order="25516" ID="29707.100004300">
+                  <Property order="25517" propName="reportText" val="{no text}" />
+                 </DisplayedItem>
+                </ChildItems>
+               </ListItem>
+               <ListItem order="25518" ID="29735.100004300" title="Other (specify)" mustImplement="false">
+                <Property order="25519" propName="reportText" val="{no text}" />
+                <ListItemResponseField order="25520" responseRequired="true">
+                 <Response>
+                  <string order="25522" maxLength="4000" />
+                 </Response>
+                </ListItemResponseField>
+                <ChildItems>
+                 <DisplayedItem order="25524" ID="29710.100004300">
+                  <Property order="25525" propName="reportText" val="{no text}" />
+                 </DisplayedItem>
+                </ChildItems>
+               </ListItem>
+              </List>
+             </ListField>
+            </Question>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25526" ID="29736.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25527" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25528" responseRequired="true">
+            <Response>
+             <string order="25530" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+        <ChildItems>
+         <Question order="25532" ID="29697.100004300" title="EGFR Exons Assessed" mustImplement="false" minCard="0">
+          <ListField maxSelections="0">
+           <List>
+            <ListItem order="25535" ID="29698.100004300" title="18" mustImplement="false" />
+            <ListItem order="25536" ID="29699.100004300" title="19" mustImplement="false" />
+            <ListItem order="25537" ID="29700.100004300" title="20" mustImplement="false" />
+            <ListItem order="25538" ID="29701.100004300" title="21" mustImplement="false" />
+            <ListItem order="25539" ID="29702.100004300" title="Other (specify)" mustImplement="false">
+             <Property order="25540" propName="reportText" val="{no text}" />
+             <ListItemResponseField order="25541" responseRequired="true">
+              <Response>
+               <string order="25543" maxLength="4000" />
+              </Response>
+             </ListItemResponseField>
+            </ListItem>
+           </List>
+          </ListField>
+         </Question>
+        </ChildItems>
+       </Question>
+       <DisplayedItem order="25544" ID="35749.100004300" title="EGFR by Mutation-Specific Immunohistochemistry" mustImplement="false" />
+       <Question order="25545" ID="34301.100004300" title="EGFR L858R (clone 43B2)" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25548" ID="34351.100004300" title="Negative" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25550" ID="36811.100004300">
+             <Property order="25551" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25552" ID="34454.100004300" title="Positive" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25554" ID="36812.100004300">
+             <Property order="25555" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25556" ID="34470.100004300" title="Equivocal (explain)#" mustImplement="false">
+           <Property order="25557" propName="reportText" val="Equivocal" />
+           <ListItemResponseField order="25558" responseRequired="true">
+            <Response>
+             <string order="25560" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+           <ChildItems>
+            <DisplayedItem order="25562" ID="34576.100004300" title="# Tumors with faint cytoplasmic labeling should be designated as equivocal. This result can rarely occur both with and without mutation.">
+             <Property order="25563" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25564" ID="34472.100004300" title="EGFR Exon 19 Deletion (E746_A750del) (clone 6B6)" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25567" ID="34473.100004300" title="Negative" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25569" ID="36813.100004300">
+             <Property order="25570" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25571" ID="34493.100004300" title="Positive" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25573" ID="36814.100004300">
+             <Property order="25574" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25575" ID="34509.100004300" title="Equivocal (explain)#" mustImplement="false">
+           <Property order="25576" propName="reportText" val="Equivocal" />
+           <ListItemResponseField order="25577" responseRequired="true">
+            <Response>
+             <string order="25579" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+           <ChildItems>
+            <DisplayedItem order="25581" ID="36815.100004300" title="# Tumors with faint cytoplasmic labeling should be designated as equivocal. This result can rarely occur both with and without mutation.">
+             <Property order="25582" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+      </ChildItems>
+     </Section>
+     <Section order="25583" ID="29712.100004300" title="ALK (Note C)" mustImplement="false" minCard="0">
+      <Property order="25584" propName="reportText" val="ALK" />
+      <ChildItems>
+       <Question order="25586" ID="29713.100004300" title="ALK Rearrangement by Molecular Methods" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25589" ID="29714.100004300" title="No rearrangement detected" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25591" ID="29683.100004300">
+             <Property order="25592" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25593" ID="29715.100004300" title="Rearrangement identified" mustImplement="false">
+           <Property order="25594" propName="reportText" val="{no text}" />
+           <ChildItems>
+            <Question order="25596" ID="30485.100004300" mustImplement="false" minCard="0">
+             <ListField>
+              <List>
+               <ListItem order="25599" ID="30486.100004300" title="EML4-ALK (specify variant type, if known)" mustImplement="false">
+                <Property order="25600" propName="reportText" val="EML4-ALK (variant type)" />
+                <ListItemResponseField order="25601" responseRequired="true">
+                 <Response>
+                  <string order="25603" maxLength="160" />
+                 </Response>
+                </ListItemResponseField>
+               </ListItem>
+               <ListItem order="25604" ID="30487.100004300" title="KIF5B-ALK" mustImplement="false" />
+               <ListItem order="25605" ID="30488.100004300" title="TFG-ALK" mustImplement="false" />
+               <ListItem order="25606" ID="30489.100004300" title="KLC1-ALK" mustImplement="false" />
+               <ListItem order="25607" ID="30490.100004300" title="Other ALK rearrangement (specify, if known)" mustImplement="false">
+                <Property order="25608" propName="reportText" val="{no text}" />
+                <ListItemResponseField order="25609" responseRequired="true">
+                 <Response>
+                  <string order="25611" maxLength="4000" />
+                 </Response>
+                </ListItemResponseField>
+               </ListItem>
+              </List>
+             </ListField>
+            </Question>
+            <Question order="25612" ID="34512.100004300" title="?Type of FISH Pattern (specify, when relevant)" minCard="0">
+             <Property order="25613" propName="reportText" val="]Type of FISH Pattern" />
+             <ResponseField order="25614">
+              <Response>
+               <string order="25616" maxLength="4000" />
+              </Response>
+             </ResponseField>
+            </Question>
+            <DisplayedItem order="25617" ID="29682.100004300">
+             <Property order="25618" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25619" ID="29728.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25620" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25621" responseRequired="true">
+            <Response>
+             <string order="25623" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25624" ID="29734.100004300" title="ALK Polysomy" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25627" ID="29731.100004300" title="Present" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25629" ID="29727.100004300">
+             <Property order="25630" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25631" ID="29729.100004300" title="Absent" mustImplement="false" />
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25632" ID="34561.100004300" title="ALK by Immunohistochemistry" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25635" ID="34562.100004300" title="Negative" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25637" ID="34563.100004300">
+             <Property order="25638" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25639" ID="34564.100004300" title="Positive" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25641" ID="34569.100004300">
+             <Property order="25642" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25643" ID="34571.100004300" title="Equivocal (explain)#" mustImplement="false">
+           <Property order="25644" propName="reportText" val="Equivocal" />
+           <ListItemResponseField order="25645" responseRequired="true">
+            <Response>
+             <string order="25647" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+           <ChildItems>
+            <DisplayedItem order="25649" ID="36816.100004300" title="# Tumors with faint cytoplasmic labeling should be designated as equivocal. This result can rarely occur both with and without mutation.">
+             <Property order="25650" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+      </ChildItems>
+     </Section>
+     <Section order="25651" ID="34695.100004300" title="ROS1 (Note C)" mustImplement="false" minCard="0">
+      <Property order="25652" propName="reportText" val="ROS1 " />
+      <ChildItems>
+       <Question order="25654" ID="34602.100004300" title="ROS1 Rearrangement by Molecular Methods" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25657" ID="34603.100004300" title="No rearrangement detected" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25659" ID="36817.100004300">
+             <Property order="25660" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25661" ID="34605.100004300" title="Rearrangement identified" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25663" ID="36818.100004300">
+             <Property order="25664" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25665" ID="34615.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25666" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25667" responseRequired="true">
+            <Response>
+             <string order="25669" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25670" ID="34627.100004300" title="ROS1 Polysomy" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25673" ID="34630.100004300" title="Present" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25675" ID="36819.100004300">
+             <Property order="25676" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25677" ID="34693.100004300" title="Absent" mustImplement="false" />
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25678" ID="34044.100004300" title="ROS1 by Immunohistochemistry" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25681" ID="34474.100004300" title="Negative" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25683" ID="36820.100004300">
+             <Property order="25684" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25685" ID="34511.100004300" title="Positive" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25687" ID="36821.100004300">
+             <Property order="25688" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25689" ID="34560.100004300" title="Equivocal (explain)#" mustImplement="false">
+           <Property order="25690" propName="reportText" val="Equivocal" />
+           <ListItemResponseField order="25691" responseRequired="true">
+            <Response>
+             <string order="25693" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+           <ChildItems>
+            <DisplayedItem order="25695" ID="36822.100004300" title="# Tumors with faint cytoplasmic labeling should be designated as equivocal. This result can rarely occur both with and without mutation.">
+             <Property order="25696" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+      </ChildItems>
+     </Section>
+     <Section order="25697" ID="34726.100004300" title="RET (Note C)" mustImplement="false" minCard="0">
+      <Property order="25698" propName="reportText" val="RET " />
+      <ChildItems>
+       <Question order="25700" ID="34758.100004300" title="RET Rearrangement by Molecular Methods" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25703" ID="34759.100004300" title="No rearrangement detected" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25705" ID="36823.100004300">
+             <Property order="25706" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25707" ID="34858.100004300" title="Rearrangement identified" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25709" ID="36824.100004300">
+             <Property order="25710" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25711" ID="34866.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25712" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25713" responseRequired="true">
+            <Response>
+             <string order="25715" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25716" ID="34867.100004300" title="RET Polysomy" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25719" ID="34934.100004300" title="Present" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25721" ID="36825.100004300">
+             <Property order="25722" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25723" ID="35027.100004300" title="Absent" mustImplement="false" />
+         </List>
+        </ListField>
+       </Question>
+      </ChildItems>
+     </Section>
+     <Section order="25724" ID="29775.100004300" title="KRAS" mustImplement="false" minCard="0">
+      <ChildItems>
+       <Question order="25726" ID="29782.100004300" title="KRAS Mutational Analysis" mustImplement="false" minCard="0">
+        <Link>
+		   <LinkText val="HUGO" >
+			   <Property propClass="tooltip" val="HUGO Gene Nomenclature Committee"></Property>
+		   </LinkText>
+		   <LinkURI val="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:6407"/>
+		</Link>
+		 <Link>
+		   <LinkText val="MCG" >
+			   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+		   </LinkText>
+		   <LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/"/>
+		</Link>
+		<Link>
+		   <LinkText val="NCBI" >
+			   <Property propClass="tooltip" val="National Center for Biotechnology Information"></Property>
+		   </LinkText>
+		   <LinkURI val="https://www.ncbi.nlm.nih.gov/gene/3845"/>
+		</Link>
+		<ListField>
+         <List>
+          <ListItem order="25729" ID="29783.100004300" title="No mutation detected" mustImplement="false" />
+          <ListItem order="25730" ID="29784.100004300" title="Mutation(s) identified" mustImplement="false">
+           <ChildItems>
+            <Question order="25732" ID="29785.100004300" title="Codon 12" mustImplement="false" minCard="0">
+             <ListField>
+              <List>
+               <ListItem order="25735" ID="29788.100004300" title="Gly12Cys (GGT&gt;TGT)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/33/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=516"/>
+				</Link>
+			   </ListItem>
+               <ListItem order="25736" ID="29786.100004300" title="Gly12Asp (GGT&gt;GAT)" mustImplement="false">
+			   <Link>
+				<LinkText val="MCG" >
+				   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+				</LinkText>
+				<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/34/"/>
+				</Link>
+				<Link>
+				<LinkText val="COSM">
+				   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+				</LinkText>
+				<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=521"/>
+				</Link>
+			   </ListItem>
+			   
+               <ListItem order="25737" ID="29787.100004300" title="Gly12Val (GGT&gt;GTT)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/37/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=520"/>
+				</Link>
+			   </ListItem>
+               <ListItem order="25738" ID="29789.100004300" title="Gly12Ser (GGT&gt;AGT)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/36/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=517"/>
+				</Link>
+			   </ListItem>
+               <ListItem order="25739" ID="29790.100004300" title="Gly12Ala (GGT&gt;GCT)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/32/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=522"/>
+				</Link>
+			   </ListItem>
+               <ListItem order="25740" ID="29791.100004300" title="Gly12Arg (GGT&gt;CGT)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/35/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=18"/>
+				</Link>
+			   </ListItem>
+               <ListItem order="25741" ID="29792.100004300" title="Specific codon 12 mutation not stated" mustImplement="false" />
+               <ListItem order="25742" ID="29793.100004300" title="Other codon 12 mutation (specify)" mustImplement="false">
+                <Property order="25743" propName="reportText" val="{no text}" />
+                <ListItemResponseField order="25744" responseRequired="true">
+                 <Response>
+                  <string order="25746" maxLength="80" />
+                 </Response>
+                </ListItemResponseField>
+               </ListItem>
+              </List>
+             </ListField>
+            </Question>
+            <Question order="25747" ID="29795.100004300" title="Codon 13" mustImplement="false" minCard="0">
+             <ListField>
+              <List>
+               <ListItem order="25750" ID="29796.100004300" title="Gly13Asp (GGC&gt;GAC)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/39/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=532"/>
+				</Link>
+			   </ListItem>
+               <ListItem order="25751" ID="29797.100004300" title="Gly13Arg (GGC&gt;CGC)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/40/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=529"/>
+				</Link>
+			   </ListItem>
+               <ListItem order="25752" ID="29798.100004300" title="Gly13Cys (GGC&gt;TGC)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/38/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=527"/>
+				</Link>
+			   </ListItem>
+			   
+               <ListItem order="25753" ID="29799.100004300" title="Gly13Ala (GGC&gt;GCC)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/68/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=533"/>
+				</Link>
+			   </ListItem>
+			   
+               <ListItem order="25754" ID="29800.100004300" title="Gly13Val (GGC&gt;GTC)" mustImplement="false" >
+				
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=534"/>
+				</Link>
+			   </ListItem>
+			   
+               <ListItem order="25755" ID="29801.100004300" title="Specific codon 13 mutation not stated" mustImplement="false" />
+               <ListItem order="25756" ID="29802.100004300" title="Other codon 13 mutation (specify)" mustImplement="false">
+                <Property order="25757" propName="reportText" val="{no text}" />
+                <ListItemResponseField order="25758" responseRequired="true">
+                 <Response>
+                  <string order="25760" maxLength="80" />
+                 </Response>
+                </ListItemResponseField>
+               </ListItem>
+              </List>
+             </ListField>
+            </Question>
+            <Question order="25761" ID="29804.100004300" title="Codon 61" mustImplement="false" minCard="0">
+             <ListField>
+              <List>
+               <ListItem order="25764" ID="29805.100004300" title="Gln61Leu (CAA&gt;CTA)" mustImplement="false" >
+				<Link>
+					<LinkText val="MCG">
+					   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+					</LinkText>
+					<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/kras/42/"/>
+				</Link>
+			    <Link>
+					<LinkText val="COSM">
+					   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+					</LinkText>
+					<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=553"/>
+				</Link>
+			   </ListItem>
+               <ListItem order="25765" ID="29806.100004300" title="Specific codon 61 mutation not stated" mustImplement="false" >
+			   
+			   </ListItem>
+			   
+               <ListItem order="25766" ID="29807.100004300" title="Other codon 61 mutation (specify)" mustImplement="false">
+                <Property order="25767" propName="reportText" val="]Other codon 61 mutation" />
+                <ListItemResponseField order="25768" responseRequired="true">
+                 <Response>
+                  <string order="25770" maxLength="80" />
+                 </Response>
+                </ListItemResponseField>
+               </ListItem>
+              </List>
+             </ListField>
+            </Question>
+            <Question order="25771" ID="29814.100004300" title="Other Codon (specify)" mustImplement="false" minCard="0" maxCard="20">
+             <Property order="25772" propName="reportText" val="]Other Codon" />
+             <ResponseField order="25773">
+              <Response>
+               <string order="25775" maxLength="80" />
+              </Response>
+             </ResponseField>
+            </Question>
+            <DisplayedItem order="25776" ID="29681.100004300">
+             <Property order="25777" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25778" ID="29815.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25779" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25780" responseRequired="true">
+            <Response>
+             <string order="25782" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25783" ID="29776.100004300" title="KRAS Codons Assessed" mustImplement="false" minCard="0">
+        <ListField maxSelections="0">
+         <List>
+          <ListItem order="25786" ID="29777.100004300" title="12" mustImplement="false" />
+          <ListItem order="25787" ID="29778.100004300" title="13" mustImplement="false" />
+          <ListItem order="25788" ID="29779.100004300" title="61" mustImplement="false" />
+          <ListItem order="25789" ID="29781.100004300" title="Other (specify)" mustImplement="false">
+           <Property order="25790" propName="reportText" val="{no text}" />
+           <ListItemResponseField order="25791" responseRequired="true">
+            <Response>
+             <string order="25793" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+      </ChildItems>
+     </Section>
+     <Section order="25794" ID="35028.100004300" title="BRAF (Note A)" mustImplement="false" minCard="0">
+      <Property order="25795" propName="reportText" val="BRAF " />
+      <ChildItems>
+       <Question order="25797" ID="35299.100004300" title="BRAF Mutational Analysis" mustImplement="false" minCard="0">
+        <Link>
+			<LinkText val="HUGO">
+			   <Property propClass="tooltip" val="HUGO Gene Nomenclature Committee"></Property>
+			</LinkText>
+			<LinkURI val="https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:1097"/>
+		</Link>
+		
+		<Link>
+			<LinkText val="MCG">
+			   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+			</LinkText>
+			<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/braf/"/>
+		</Link>
+		<Link>
+			<LinkText val="NCBI">
+			   <Property propClass="tooltip" val="National Center for Biotechnology Information"></Property>
+			</LinkText>
+			<LinkURI val="https://www.ncbi.nlm.nih.gov/gene/673"/>
+		</Link>
+		<ListField>
+         <List>
+          <ListItem order="25800" ID="35089.100004300" title="No mutations detected" mustImplement="false" />
+          <ListItem order="25801" ID="35296.100004300" title="BRAF V600E (c.1799T&gt;A) mutation" mustImplement="false" >
+			<Link>
+			<LinkText val="MCG">
+			   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+			</LinkText>
+			<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/braf/54/"/>
+			</Link>
+			<Link>
+			<LinkText val="COSM">
+			   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+			</LinkText>
+			<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=476"/>
+		</Link>
+		  </ListItem>
+		  
+		  
+          <ListItem order="25802" ID="35297.100004300" title="Other BRAF V600 mutation (specify)" mustImplement="false">
+           <Property order="25803" propName="reportText" val="]Other BRAF V600 mutation" />
+           <ListItemResponseField order="25804" responseRequired="true">
+            <Response>
+             <string order="25806" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+          <ListItem order="25807" ID="35298.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25808" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25809" responseRequired="true">
+            <Response>
+             <string order="25811" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25812" ID="35715.100004300" title="BRAF Exons Assessed" mustImplement="false" minCard="0">
+        <ListField maxSelections="0">
+         <List>
+          <ListItem order="25815" ID="35716.100004300" title="11" mustImplement="false" />
+          <ListItem order="25816" ID="35717.100004300" title="15" mustImplement="false" />
+         </List>
+        </ListField>
+       </Question>
+      </ChildItems>
+     </Section>
+     <Section order="25817" ID="35029.100004300" title="ERBB2 (Note A)" mustImplement="false" minCard="0">
+      <Property order="25818" propName="reportText" val="ERBB2 " />
+      <ChildItems>
+       <Question order="25820" ID="35300.100004300" title="ERBB2 Mutational Analysis" mustImplement="false" minCard="0">
+			<Link>
+			<LinkText val="MCG">
+			   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+			</LinkText>
+			<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/erbb2/"/>
+			</Link>
+			<Link>
+			<LinkText val="HUGO">
+			   <Property propClass="tooltip" val="HUGO Gene Nomenclature Committee"></Property>
+			</LinkText>
+			<LinkURI val="https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:7029"/>
+			</Link>
+			<Link>
+			<LinkText val="NCBI">
+			   <Property propClass="tooltip" val="National Center for Biotechnology Information"></Property>
+			</LinkText>
+			<LinkURI val="https://www.ncbi.nlm.nih.gov/gene/2064"/>
+			</Link>
+		<ListField>
+         <List>
+          <ListItem order="25823" ID="35301.100004300" title="No mutations detected" mustImplement="false" />
+          <ListItem order="25824" ID="35302.100004300" title="ERBB2 774_775insAYVM insertion mutation" mustImplement="false" >
+			<Link>
+				<LinkText val="MCG">
+				   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+				</LinkText>
+				<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/erbb2/65/"/>
+				</Link>
+				<Link>
+				<LinkText val="COSM">
+				   <Property propClass="tooltip" val="Catalog of Somatic Mutations in Cancer"></Property>
+				</LinkText>
+				<LinkURI val="http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=21599"/>
+			</Link>
+		  </ListItem>
+		  
+          <ListItem order="25825" ID="35312.100004300" title="ERBB2 776_776G&gt;VC insertion mutation" mustImplement="false" />
+          <ListItem order="25826" ID="35303.100004300" title="Other ERBB2 exon 20 mutation (specify)" mustImplement="false">
+           <Property order="25827" propName="reportText" val="]Other ERBB2 exon 20 mutation" />
+           <ListItemResponseField order="25828" responseRequired="true">
+            <Response>
+             <string order="25830" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+          <ListItem order="25831" ID="35307.100004300" title="Other ERBB2 mutation (non-exon 20) (specify)" mustImplement="false">
+           <Property order="25832" propName="reportText" val="]Other ERBB2 mutation (non-exon 20)" />
+           <ListItemResponseField order="25833" responseRequired="true">
+            <Response>
+             <string order="25835" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+          <ListItem order="25836" ID="35311.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25837" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25838" responseRequired="true">
+            <Response>
+             <string order="25840" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25841" ID="35718.100004300" title="ERBB2 Exons Assessed" mustImplement="false" minCard="0">
+        <ListField maxSelections="0">
+         <List>
+          <ListItem order="25844" ID="35719.100004300" title="8" mustImplement="false" />
+          <ListItem order="25845" ID="35720.100004300" title="6" mustImplement="false" />
+          <ListItem order="25846" ID="35723.100004300" title="20" mustImplement="false" />
+         </List>
+        </ListField>
+       </Question>
+      </ChildItems>
+     </Section>
+     <Section order="25847" ID="35030.100004300" title="MET (Note B)" mustImplement="false" minCard="0">
+      <Property order="25848" propName="reportText" val="MET " />
+      <ChildItems>
+       <Question order="25850" ID="35314.100004300" title="MET Mutational Analysis" mustImplement="false" minCard="0">
+		<Link>
+			<LinkText val="HUGO">
+			   <Property propClass="tooltip" val="HUGO Gene Nomenclature Committee"></Property>
+			</LinkText>
+			<LinkURI val="https://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=HGNC:7029"/>
+			</Link>
+			<Link>
+			<LinkText val="MCG">
+			   <Property propClass="tooltip" val="My Cancer Genome"></Property>
+			</LinkText>
+			<LinkURI val="https://www.mycancergenome.org/content/disease/lung-cancer/met/343/"/>
+			</Link>
+			<Link>
+			<LinkText val="NCBI">
+			   <Property propClass="tooltip" val="National Center for Biotechnology Information"></Property>
+			</LinkText>
+			<LinkURI val="https://www.ncbi.nlm.nih.gov/gene/4233"/>
+			</Link>
+        <ListField>
+         <List>
+          <ListItem order="25853" ID="35315.100004300" title="No mutation detected" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25855" ID="36826.100004300">
+             <Property order="25856" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25857" ID="35316.100004300" title="MET D963_splice mutation detected" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25859" ID="36827.100004300">
+             <Property order="25860" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25861" ID="35317.100004300" title="MET D1010N mutation detected" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25863" ID="36828.100004300">
+             <Property order="25864" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25865" ID="35318.100004300" title="MET D1010_splice mutation detected" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25867" ID="36829.100004300">
+             <Property order="25868" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25869" ID="35319.100004300" title="Other MET intron 13 mutation (specify)" mustImplement="false">
+           <Property order="25870" propName="reportText" val="]Other MET intron 13 mutation" />
+           <ListItemResponseField order="25871" responseRequired="true">
+            <Response>
+             <string order="25873" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+           <ChildItems>
+            <DisplayedItem order="25875" ID="36830.100004300">
+             <Property order="25876" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25877" ID="35321.100004300" title="Other MET intron 14 mutation (specify)" mustImplement="false">
+           <Property order="25878" propName="reportText" val="]Other MET intron 14 mutation" />
+           <ListItemResponseField order="25879" responseRequired="true">
+            <Response>
+             <string order="25881" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+           <ChildItems>
+            <DisplayedItem order="25883" ID="36831.100004300">
+             <Property order="25884" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25885" ID="35322.100004300" title="Other MET exon 14 mutation (specify)" mustImplement="false">
+           <Property order="25886" propName="reportText" val="]Other MET exon 14 mutation" />
+           <ListItemResponseField order="25887" responseRequired="true">
+            <Response>
+             <string order="25889" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+           <ChildItems>
+            <DisplayedItem order="25891" ID="36832.100004300">
+             <Property order="25892" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25893" ID="35323.100004300" title="MET exon 14 deletion detected" mustImplement="false">
+           <ChildItems>
+            <DisplayedItem order="25895" ID="36833.100004300">
+             <Property order="25896" propName="reportText" val="{no text}" />
+            </DisplayedItem>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25897" ID="35324.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25898" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25899" responseRequired="true">
+            <Response>
+             <string order="25901" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25902" ID="35344.100004300" title="MET Copy Number Analysis" mustImplement="false" minCard="0">
+        <ListField>
+         <List>
+          <ListItem order="25905" ID="35345.100004300" title="No amplification detected" mustImplement="false" />
+          <ListItem order="25906" ID="35346.100004300" title="Amplification identified" mustImplement="false">
+           <ChildItems>
+            <Question order="25908" ID="35358.100004300" title="Specify Copy Number" mustImplement="false" minCard="0">
+             <Property order="25909" propName="reportText" val="Copy Number" />
+             <ResponseField order="25910">
+              <Response>
+               <string order="25912" maxLength="4" />
+              </Response>
+             </ResponseField>
+            </Question>
+            <Question order="25913" ID="35357.100004300" title="Specify Ratio to Centromere 7" mustImplement="false" minCard="0">
+             <Property order="25914" propName="reportText" val="Ratio to Centromere 7" />
+             <ResponseField order="25915">
+              <Response>
+               <string order="25917" maxLength="4" />
+              </Response>
+             </ResponseField>
+            </Question>
+           </ChildItems>
+          </ListItem>
+          <ListItem order="25918" ID="35360.100004300" title="Cannot be determined (explain)" mustImplement="false">
+           <Property order="25919" propName="reportText" val="Cannot be determined" />
+           <ListItemResponseField order="25920" responseRequired="true">
+            <Response>
+             <string order="25922" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+       <Question order="25923" ID="35721.100004300" title="MET Region(s) Assessed" mustImplement="false" minCard="0">
+        <ListField maxSelections="0">
+         <List>
+          <ListItem order="25926" ID="35722.100004300" title="Intron 13" mustImplement="false" />
+          <ListItem order="25927" ID="36185.100004300" title="Intron 14" mustImplement="false" />
+          <ListItem order="25928" ID="36270.100004300" title="Exon 14" mustImplement="false" />
+          <ListItem order="25929" ID="36283.100004300" title="Other (specify)" mustImplement="false">
+           <Property order="25930" propName="reportText" val="{no text}" />
+           <ListItemResponseField order="25931" responseRequired="true">
+            <Response>
+             <string order="25933" maxLength="4000" />
+            </Response>
+           </ListItemResponseField>
+          </ListItem>
+         </List>
+        </ListField>
+       </Question>
+      </ChildItems>
+     </Section>
+     <Section order="25934" ID="29724.100004300" title="Other Markers Tested (Note D) (repeat as needed)" minCard="0">
+      <Property order="25935" propName="reportText" val="{no text}" />
+      <ChildItems>
+       <Question order="25937" ID="29719.100004300" title="Specify Other Marker" mustImplement="false" minCard="0" maxCard="10">
+        <Property order="25938" propName="reportText" val="]Marker" />
+        <ResponseField order="25939">
+         <Response>
+          <string order="25941" maxLength="80" />
+         </Response>
+        </ResponseField>
+        <ChildItems>
+         <Question order="25943" ID="29720.100004300" title="Specify Results">
+          <Property order="25944" propName="reportText" val="Results" />
+          <ResponseField order="25945">
+           <Response>
+            <string order="25947" maxLength="160" />
+           </Response>
+          </ResponseField>
+         </Question>
+         <Question order="25948" ID="29774.100004300" title="Specify Testing Method(s)">
+          <Property order="25949" propName="reportText" val="Testing Method" />
+          <ResponseField order="25950">
+           <Response>
+            <string order="25952" maxLength="160" />
+           </Response>
+          </ResponseField>
+         </Question>
+        </ChildItems>
+       </Question>
+      </ChildItems>
+     </Section>
+    </ChildItems>
+   </Section>
+   <Section order="25953" ID="29695.100004300" title="METHODS" mustImplement="false" minCard="0">
+    <ChildItems>
+     <Question order="25955" ID="36378.100004300" title="Sequencing Type" mustImplement="false" minCard="0">
+      <ListField>
+       <List>
+        <ListItem order="25958" ID="36379.100004300" title="Targeted panel sequencing (specify)" mustImplement="false">
+         <Property order="25959" propName="reportText" val="Targeted panel sequencing" />
+         <ListItemResponseField order="25960" responseRequired="true">
+          <Response>
+           <string order="25962" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="25963" ID="30493.100004300" title="Whole exome sequencing (specify)" mustImplement="false">
+         <Property order="25964" propName="reportText" val="Whole exome sequencing" />
+         <ListItemResponseField order="25965" responseRequired="true">
+          <Response>
+           <string order="25967" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="25968" ID="30492.100004300" title="Whole genome sequencing (specify)" mustImplement="false">
+         <Property order="25969" propName="reportText" val="Whole genome sequencing" />
+         <ListItemResponseField order="25970" responseRequired="true">
+          <Response>
+           <string order="25972" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+     </Question>
+     <Question order="25973" ID="29767.100004300" title="EGFR Mutational Analysis Testing Method(s)#" mustImplement="false" minCard="0">
+      <Property order="25974" propName="reportText" val="EGFR Mutational Analysis Testing Method(s)" />
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="25977" ID="29768.100004300" title="Direct Sanger sequencing (specify applicable exons)" mustImplement="false">
+         <Property order="25978" propName="reportText" val="Direct Sanger sequencing (applicable exons)" />
+         <ListItemResponseField order="25979" responseRequired="true">
+          <Response>
+           <string order="25981" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="25982" ID="29770.100004300" title="Pyrosequencing (specify applicable exons)" mustImplement="false">
+         <Property order="25983" propName="reportText" val="Pyrosequencing (applicable exons)" />
+         <ListItemResponseField order="25984" responseRequired="true">
+          <Response>
+           <string order="25986" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="25987" ID="29769.100004300" title="High-resolution melting analysis (specify applicable exons)" mustImplement="false">
+         <Property order="25988" propName="reportText" val="High-resolution melting analysis (applicable exons)" />
+         <ListItemResponseField order="25989" responseRequired="true">
+          <Response>
+           <string order="25991" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="25992" ID="29688.100004300" title="Polymerase chain reaction (PCR), allele-specific hybridization (specify applicable exons)" mustImplement="false">
+         <Property order="25993" propName="reportText" val="Polymerase chain reaction (PCR), allele-specific hybridization (applicable exons)" />
+         <ListItemResponseField order="25994" responseRequired="true">
+          <Response>
+           <string order="25996" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="25997" ID="29771.100004300" title="Real-time PCR (specify applicable exons)" mustImplement="false">
+         <Property order="25998" propName="reportText" val="Real-time PCR (applicable exons)" />
+         <ListItemResponseField order="25999" responseRequired="true">
+          <Response>
+           <string order="26001" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26002" ID="34243.100004300" title="Mutation-specific immunohistochemistry (IHC)" mustImplement="false">
+         <ChildItems>
+          <Question order="26004" ID="36376.100004300" mustImplement="false" minCard="0">
+           <ListField maxSelections="0">
+            <List>
+             <ListItem order="26007" ID="35361.100004300" title="43B2 (L858R) clone" mustImplement="false" />
+             <ListItem order="26008" ID="35362.100004300" title="6B6 (E746_A750del) clone" mustImplement="false" />
+             <ListItem order="26009" ID="35363.100004300" title="Other (specify)" mustImplement="false">
+              <Property order="26010" propName="reportText" val="{no text}" />
+              <ListItemResponseField order="26011" responseRequired="true">
+               <Response>
+                <string order="26013" maxLength="4000" />
+               </Response>
+              </ListItemResponseField>
+             </ListItem>
+            </List>
+           </ListField>
+          </Question>
+         </ChildItems>
+        </ListItem>
+        <ListItem order="26014" ID="29773.100004300" title="Other (specify method and applicable exons)" mustImplement="false">
+         <Property order="26015" propName="reportText" val="]Other method and applicable exons" />
+         <ListItemResponseField order="26016" responseRequired="true">
+          <Response>
+           <string order="26018" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+      <ChildItems>
+       <DisplayedItem order="26020" ID="29772.100004300" title="# Please specify if different testing methods were used for different exons.">
+        <Property order="26021" propName="reportText" val="{no text}" />
+       </DisplayedItem>
+      </ChildItems>
+     </Question>
+     <Question order="26022" ID="29738.100004300" title="ALK Rearrangement Testing Method(s)" mustImplement="false" minCard="0">
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="26025" ID="29739.100004300" title="In situ hybridization (fluorescence [FISH] or chromogenic [CISH])" mustImplement="false">
+         <ListItemResponseField order="26026">
+          <Response>
+           <string order="26028" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26029" ID="29740.100004300" title="Reverse transcriptase polymerase chain reaction (RT-PCR)" mustImplement="false">
+         <ListItemResponseField order="26030">
+          <Response>
+           <string order="26032" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+         <ChildItems>
+          <Question order="26034" ID="29816.100004300" title="Fusions Identified (specify)" mustImplement="false" minCard="0">
+           <Property order="26035" propName="reportText" val="Fusions Identified" />
+           <ResponseField order="26036">
+            <Response>
+             <string order="26038" maxLength="160" />
+            </Response>
+           </ResponseField>
+          </Question>
+         </ChildItems>
+        </ListItem>
+        <ListItem order="26039" ID="29822.100004300" title="Immunohistochemistry (IHC)" mustImplement="false">
+         <ChildItems>
+          <Question order="26041" ID="36377.100004300" mustImplement="false" minCard="0">
+           <ListField maxSelections="0">
+            <List>
+             <ListItem order="26044" ID="29818.100004300" title="5A4 clone" mustImplement="false" />
+             <ListItem order="26045" ID="29819.100004300" title="D5F3 clone" mustImplement="false" />
+             <ListItem order="26046" ID="29820.100004300" title="Ventana ALK (D5F3) immunohistochemistry (IHC) assay" mustImplement="false" />
+             <ListItem order="26047" ID="29821.100004300" title="Other (specify)" mustImplement="false">
+              <Property order="26048" propName="reportText" val="{no text}" />
+              <ListItemResponseField order="26049" responseRequired="true">
+               <Response>
+                <string order="26051" maxLength="4000" />
+               </Response>
+              </ListItemResponseField>
+             </ListItem>
+            </List>
+           </ListField>
+          </Question>
+         </ChildItems>
+        </ListItem>
+        <ListItem order="26052" ID="36433.100004300" title="Anchored multiplex PCR" mustImplement="false" />
+        <ListItem order="26053" ID="29741.100004300" title="Other (specify)" mustImplement="false">
+         <Property order="26054" propName="reportText" val="{no text}" />
+         <ListItemResponseField order="26055" responseRequired="true">
+          <Response>
+           <string order="26057" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+     </Question>
+     <Question order="26058" ID="35426.100004300" title="ROS1 Rearrangement Testing Method(s)" mustImplement="false" minCard="0">
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="26061" ID="35427.100004300" title="In situ hybridization (fluorescence [FISH] or chromogenic [CISH])" mustImplement="false">
+         <ListItemResponseField order="26062">
+          <Response>
+           <string order="26064" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26065" ID="35428.100004300" title="Reverse transcriptase polymerase chain reaction (RT-PCR)" mustImplement="false">
+         <ListItemResponseField order="26066">
+          <Response>
+           <string order="26068" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+         <ChildItems>
+          <Question order="26070" ID="35429.100004300" title="Fusions Identified (specify)" mustImplement="false" minCard="0">
+           <Property order="26071" propName="reportText" val="Fusions Identified" />
+           <ResponseField order="26072">
+            <Response>
+             <string order="26074" maxLength="160" />
+            </Response>
+           </ResponseField>
+          </Question>
+         </ChildItems>
+        </ListItem>
+        <ListItem order="26075" ID="35466.100004300" title="Immunohistochemistry (IHC)" mustImplement="false">
+         <ChildItems>
+          <Question order="26077" ID="35487.100004300" mustImplement="false" minCard="0">
+           <ListField maxSelections="0">
+            <List>
+             <ListItem order="26080" ID="35556.100004300" title="D4D6 clone" mustImplement="false" />
+             <ListItem order="26081" ID="35710.100004300" title="Other (specify)" mustImplement="false">
+              <Property order="26082" propName="reportText" val="{no text}" />
+              <ListItemResponseField order="26083" responseRequired="true">
+               <Response>
+                <string order="26085" maxLength="4000" />
+               </Response>
+              </ListItemResponseField>
+             </ListItem>
+            </List>
+           </ListField>
+          </Question>
+         </ChildItems>
+        </ListItem>
+        <ListItem order="26086" ID="36434.100004300" title="Anchored multiplex PCR" mustImplement="false" />
+        <ListItem order="26087" ID="35711.100004300" title="Other (specify)" mustImplement="false">
+         <Property order="26088" propName="reportText" val="{no text}" />
+         <ListItemResponseField order="26089" responseRequired="true">
+          <Response>
+           <string order="26091" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+     </Question>
+     <Question order="26092" ID="35577.100004300" title="RET Rearrangement Testing Method(s)" mustImplement="false" minCard="0">
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="26095" ID="35662.100004300" title="In situ hybridization (fluorescence [FISH] or chromogenic [CISH])" mustImplement="false">
+         <ListItemResponseField order="26096">
+          <Response>
+           <string order="26098" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26099" ID="35712.100004300" title="Reverse transcriptase polymerase chain reaction (RT-PCR)" mustImplement="false">
+         <ListItemResponseField order="26100">
+          <Response>
+           <string order="26102" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+         <ChildItems>
+          <Question order="26104" ID="35713.100004300" title="Fusions Identified (specify)" mustImplement="false" minCard="0">
+           <Property order="26105" propName="reportText" val="Fusions Identified" />
+           <ResponseField order="26106">
+            <Response>
+             <string order="26108" maxLength="160" />
+            </Response>
+           </ResponseField>
+          </Question>
+         </ChildItems>
+        </ListItem>
+        <ListItem order="26109" ID="36435.100004300" title="Anchored multiplex PCR" mustImplement="false" />
+        <ListItem order="26110" ID="35714.100004300" title="Other (specify)" mustImplement="false">
+         <Property order="26111" propName="reportText" val="{no text}" />
+         <ListItemResponseField order="26112" responseRequired="true">
+          <Response>
+           <string order="26114" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+     </Question>
+     <Question order="26115" ID="29758.100004300" title="KRAS Mutational Analysis Testing Method(s)#" mustImplement="false" minCard="0">
+      <Property order="26116" propName="reportText" val="KRAS Mutational Analysis Testing Method(s)" />
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="26119" ID="29759.100004300" title="Direct Sanger sequencing (specify applicable codons)" mustImplement="false">
+         <Property order="26120" propName="reportText" val="Direct Sanger sequencing (applicable codons)" />
+         <ListItemResponseField order="26121" responseRequired="true">
+          <Response>
+           <string order="26123" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26124" ID="29760.100004300" title="Pyrosequencing (specify applicable codons)" mustImplement="false">
+         <Property order="26125" propName="reportText" val="Pyrosequencing (applicable codons)" />
+         <ListItemResponseField order="26126" responseRequired="true">
+          <Response>
+           <string order="26128" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26129" ID="29761.100004300" title="High-resolution melting analysis (specify applicable codons)" mustImplement="false">
+         <Property order="26130" propName="reportText" val="High-resolution melting analysis (applicable codons)" />
+         <ListItemResponseField order="26131" responseRequired="true">
+          <Response>
+           <string order="26133" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26134" ID="29762.100004300" title="Polymerase chain reaction (PCR), allele specific hybridization (specify applicable codons)" mustImplement="false">
+         <Property order="26135" propName="reportText" val="Polymerase chain reaction (PCR), allele specific hybridization (applicable codons)" />
+         <ListItemResponseField order="26136" responseRequired="true">
+          <Response>
+           <string order="26138" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26139" ID="29763.100004300" title="Real-time PCR (specify applicable codons)" mustImplement="false">
+         <Property order="26140" propName="reportText" val="Real-time PCR (applicable codons)" />
+         <ListItemResponseField order="26141" responseRequired="true">
+          <Response>
+           <string order="26143" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26144" ID="29764.100004300" title="Other (specify test and applicable codons)" mustImplement="false">
+         <Property order="26145" propName="reportText" val="]Other test and applicable codons" />
+         <ListItemResponseField order="26146" responseRequired="true">
+          <Response>
+           <string order="26148" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+      <ChildItems>
+       <DisplayedItem order="26150" ID="29765.100004300" title="# Please specify if different testing methods are used for different codons.">
+        <Property order="26151" propName="reportText" val="{no text}" />
+       </DisplayedItem>
+      </ChildItems>
+     </Question>
+     <Question order="26152" ID="35724.100004300" title="BRAF Mutational Analysis Testing Method(s)#" mustImplement="false" minCard="0">
+      <Property order="26153" propName="reportText" val="BRAF Mutational Analysis Testing Method(s)" />
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="26156" ID="35725.100004300" title="Direct Sanger sequencing (specify applicable codons)" mustImplement="false">
+         <Property order="26157" propName="reportText" val="Direct Sanger sequencing (applicable codons)" />
+         <ListItemResponseField order="26158" responseRequired="true">
+          <Response>
+           <string order="26160" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26161" ID="35726.100004300" title="Pyrosequencing (specify applicable codons)" mustImplement="false">
+         <Property order="26162" propName="reportText" val="Pyrosequencing (applicable codons)" />
+         <ListItemResponseField order="26163" responseRequired="true">
+          <Response>
+           <string order="26165" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26166" ID="35727.100004300" title="High-resolution melting analysis (specify applicable codons)" mustImplement="false">
+         <Property order="26167" propName="reportText" val="High-resolution melting analysis (applicable codons)" />
+         <ListItemResponseField order="26168" responseRequired="true">
+          <Response>
+           <string order="26170" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26171" ID="35728.100004300" title="Polymerase chain reaction (PCR), allele specific hybridization (specify applicable codons)" mustImplement="false">
+         <Property order="26172" propName="reportText" val="Polymerase chain reaction (PCR), allele specific hybridization (applicable codons)" />
+         <ListItemResponseField order="26173" responseRequired="true">
+          <Response>
+           <string order="26175" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26176" ID="35729.100004300" title="Real-time PCR (specify applicable codons)" mustImplement="false">
+         <Property order="26177" propName="reportText" val="Real-time PCR (applicable codons)" />
+         <ListItemResponseField order="26178" responseRequired="true">
+          <Response>
+           <string order="26180" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26181" ID="35730.100004300" title="Other (specify test and applicable codons)" mustImplement="false">
+         <Property order="26182" propName="reportText" val="]Other test and applicable codons" />
+         <ListItemResponseField order="26183" responseRequired="true">
+          <Response>
+           <string order="26185" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+      <ChildItems>
+       <DisplayedItem order="26187" ID="35731.100004300" title="# Please specify if different testing methods are used for different codons.">
+        <Property order="26188" propName="reportText" val="{no text}" />
+       </DisplayedItem>
+      </ChildItems>
+     </Question>
+     <Question order="26189" ID="35732.100004300" title="ERBB2 Mutational Analysis Testing Method(s)#" mustImplement="false" minCard="0">
+      <Property order="26190" propName="reportText" val="ERBB2 Mutational Analysis Testing Method(s)" />
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="26193" ID="35733.100004300" title="Direct Sanger sequencing (specify applicable codons)" mustImplement="false">
+         <Property order="26194" propName="reportText" val="Direct Sanger sequencing (applicable codons)" />
+         <ListItemResponseField order="26195" responseRequired="true">
+          <Response>
+           <string order="26197" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26198" ID="35734.100004300" title="Pyrosequencing (specify applicable codons)" mustImplement="false">
+         <Property order="26199" propName="reportText" val="Pyrosequencing (applicable codons)" />
+         <ListItemResponseField order="26200" responseRequired="true">
+          <Response>
+           <string order="26202" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26203" ID="35735.100004300" title="High-resolution melting analysis (specify applicable codons)" mustImplement="false">
+         <Property order="26204" propName="reportText" val="High-resolution melting analysis (applicable codons)" />
+         <ListItemResponseField order="26205" responseRequired="true">
+          <Response>
+           <string order="26207" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26208" ID="35736.100004300" title="Polymerase chain reaction (PCR), allele specific hybridization (specify applicable codons)" mustImplement="false">
+         <Property order="26209" propName="reportText" val="Polymerase chain reaction (PCR), allele specific hybridization (applicable codons)" />
+         <ListItemResponseField order="26210" responseRequired="true">
+          <Response>
+           <string order="26212" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26213" ID="35737.100004300" title="Real-time PCR (specify applicable codons)" mustImplement="false">
+         <Property order="26214" propName="reportText" val="Real-time PCR (applicable codons)" />
+         <ListItemResponseField order="26215" responseRequired="true">
+          <Response>
+           <string order="26217" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26218" ID="35738.100004300" title="Other (specify test and applicable codons)" mustImplement="false">
+         <Property order="26219" propName="reportText" val="]Other test and applicable codons" />
+         <ListItemResponseField order="26220" responseRequired="true">
+          <Response>
+           <string order="26222" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+      <ChildItems>
+       <DisplayedItem order="26224" ID="35739.100004300" title="# Please specify if different testing methods are used for different codons.">
+        <Property order="26225" propName="reportText" val="{no text}" />
+       </DisplayedItem>
+      </ChildItems>
+     </Question>
+     <Question order="26226" ID="35740.100004300" title="MET Mutational Analysis Testing Method(s)#" mustImplement="false" minCard="0">
+      <Property order="26227" propName="reportText" val="MET Mutational Analysis Testing Method(s)" />
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="26230" ID="35741.100004300" title="Direct Sanger sequencing (specify applicable codons)" mustImplement="false">
+         <Property order="26231" propName="reportText" val="Direct Sanger sequencing (applicable codons)" />
+         <ListItemResponseField order="26232" responseRequired="true">
+          <Response>
+           <string order="26234" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26235" ID="35742.100004300" title="Reverse transcriptase polymerase chain reaction (RT-PCR) (specify applicable codons)" mustImplement="false">
+         <Property order="26236" propName="reportText" val="Reverse transcriptase polymerase chain reaction (RT-PCR) (applicable codons)" />
+         <ListItemResponseField order="26237" responseRequired="true">
+          <Response>
+           <string order="26239" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+        <ListItem order="26240" ID="35743.100004300" title="Other (specify test and applicable codons)" mustImplement="false">
+         <Property order="26241" propName="reportText" val="]Other test and applicable codons" />
+         <ListItemResponseField order="26242" responseRequired="true">
+          <Response>
+           <string order="26244" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+      <ChildItems>
+       <DisplayedItem order="26246" ID="35744.100004300" title="# Please specify if different testing methods are used for different codons.">
+        <Property order="26247" propName="reportText" val="{no text}" />
+       </DisplayedItem>
+      </ChildItems>
+     </Question>
+     <Question order="26248" ID="35745.100004300" title="MET Copy Number Testing Method(s)" mustImplement="false" minCard="0">
+      <ListField maxSelections="0">
+       <List>
+        <ListItem order="26251" ID="35746.100004300" title="In situ hybridization (fluorescence [FISH] or chromogenic [CISH])" mustImplement="false" />
+        <ListItem order="26252" ID="35747.100004300" title="Array comparative genome hybridization (aCGH)" mustImplement="false" />
+        <ListItem order="26253" ID="35748.100004300" title="Other (specify)" mustImplement="false">
+         <Property order="26254" propName="reportText" val="{no text}" />
+         <ListItemResponseField order="26255" responseRequired="true">
+          <Response>
+           <string order="26257" maxLength="4000" />
+          </Response>
+         </ListItemResponseField>
+        </ListItem>
+       </List>
+      </ListField>
+     </Question>
+    </ChildItems>
+   </Section>
+   <Question order="26258" ID="29823.100004300" title="Comment(s)" mustImplement="false" minCard="0">
+    <ResponseField order="26259">
+     <Response>
+      <string order="26261" maxLength="4000" />
+     </Response>
+    </ResponseField>
+   </Question>
+  </ChildItems>
+ </Body>
+ <Footer styleClass="left" ID="Footer.227.100004300">
+  <Property type="meta" styleClass="copyright" order="26263" propName="CopyrightFooter" val="(c) 2017 College of American Pathologists.  All rights reserved.  License required for use." />
+ </Footer>
+</FormDesign>
