@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>bootstrap</id>
+    <version>3.4.1</version>
+    <title>Bootstrap CSS</title>
+    <authors>Twitter, Inc.</authors>
+    <owners>bootstrap</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://getbootstrap.com/</projectUrl>
+    <iconUrl>https://getbootstrap.com/apple-touch-icon.png</iconUrl>
+    <description>The most popular front-end framework for developing responsive, mobile first projects on the web.</description>
+    <summary>Bootstrap framework in CSS. Includes fonts and JavaScript</summary>
+    <releaseNotes>https://blog.getbootstrap.com/</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <language>en-us</language>
+    <tags>css js less mobile-first responsive front-end framework web</tags>
+    <dependencies>
+      <dependency id="jQuery" version="[1.9.1, 4.0.0)" />
+    </dependencies>
+  </metadata>
+</package>

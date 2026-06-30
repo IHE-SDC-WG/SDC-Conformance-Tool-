@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Owin</id>
+    <version>4.2.2</version>
+    <authors>Microsoft</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>Icon.png</icon>
+    <projectUrl>https://github.com/aspnet/AspNetKatana</projectUrl>
+    <description>Provides a set of helper types and abstractions for simplifying the creation of OWIN components.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>Microsoft OWIN Katana</tags>
+    <serviceable>true</serviceable>
+    <repository type="git" url="https://github.com/aspnet/AspNetKatana" commit="dbecd0d61958f8bb48263e31bd7344b25fc2d4da" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="Owin" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
